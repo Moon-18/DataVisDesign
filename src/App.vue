@@ -1,0 +1,189 @@
+<template>
+  <h1>个人支出财务统计</h1>
+  <div style="width: 50vw;display:inline-block">
+    <div v-show="choose" ref="pieDom" style="width: 900px; height: 600px;display:inline-block"></div>
+    <div v-show="!choose" ref="lineDom" style="width: 900px; height: 600px;display:inline-block"></div>
+  </div>
+
+  <div style="width: 50vw;display:inline-block">
+    <el-button type="primary" @click="addData()">增加数据</el-button>
+    <el-button type="primary" @click="change()">切换数据</el-button>
+  </div>
+
+</template>
+
+<script lang="ts" setup>
+import lineChartVue from './components/lineChart.vue';
+import { ref, onMounted, watch } from "vue";
+import * as echarts from "echarts";//  按需引入 echarts
+const choose = ref(true)
+function change() {
+  choose.value = !choose.value
+  initPie()
+  initLine()
+}
+const inputName = ref('')
+const inputSeason = ref(0)
+const inputValue = ref(0)
+function addData() {
+
+  //TODO2:增加数据,数据的来源是上面这仨变量,需要添加到yearData,seasonData的对应项中
+  //inputName在已有标签中,添加对应数据;否则添加到其他
+  //大概张下面两条的样子
+  // yearData.value.push({ value: 50, name: 'rose 9' })
+  // seasonData.value[0].data[0] += 50
+  initPie()
+  initLine()
+  console.log(yearData.value);
+  inputName.value = ""
+  inputSeason.value=0
+  inputValue.value = 0
+
+}
+//TODO1:合理数据,符合对应项 全年=季度之和,且符合正常的支出(自己搜搜或造一造)
+const yearData = ref([] as any)//饼图数据,数据含义是,这一项全年的支出
+yearData.value = [
+  { value: 40, name: '住房支出' },
+  { value: 38, name: '饮食支出' },
+  { value: 32, name: '交通支出' },
+  { value: 30, name: '教育支出' },
+  { value: 28, name: '医疗支出' },
+  { value: 26, name: '娱乐支出' },
+  { value: 18, name: '其他支出' }
+]
+
+const seasonData = ref()//折线图部分数据,数据每一项中data含义是,这一项这一季度的支出(0,1,2,3季度)
+seasonData.value = [
+  {
+    name: '住房支出',
+    type: 'line',
+    //stack: 'Total',
+    data: [120, 132, 101, 134]
+  },
+  {
+    name: '饮食支出',
+    type: 'line',
+    //stack: 'Total',
+    data: [220, 182, 191, 234]
+  },
+  {
+    name: '交通支出',
+    type: 'line',
+    //stack: 'Total',
+    data: [150, 232, 201, 154]
+  },
+  {
+    name: '教育支出',
+    type: 'line',
+    //stack: 'Total',
+    data: [320, 332, 301, 334]
+  },
+  {
+    name: '医疗支出',
+    type: 'line',
+    //stack: 'Total',
+    data: [820, 932, 901, 934]
+  }, {
+    name: '娱乐支出',
+    type: 'line',
+    //stack: 'Total',
+    data: [820, 932, 901, 934]
+  }, {
+    name: '其他支出',
+    type: 'line',
+    //stack: 'Total',
+    data: [820, 932, 901, 934]
+  }
+]
+
+
+//饼图配置部分
+const pieDom = ref() // 使用ref创建虚拟DOM引用，使用时用pieDom.value
+var myPieChart: any;
+const optionPie = ref({
+  legend: {
+    top: 'bottom'
+  },
+  toolbox: {
+    show: true,
+    feature: {
+      mark: { show: true },
+      dataView: { show: true, readOnly: false },
+      restore: { show: true },
+      saveAsImage: { show: true }
+    }
+  },
+  series: [
+    {
+      name: 'Nightingale Chart',
+      type: 'pie',
+      radius: [50, 250],
+      center: ['50%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        borderRadius: 8
+      },
+      data: yearData.value
+    }
+  ]
+})
+function initPie() {
+  // 基于准备好的dom，初始化echarts实例
+  // 指定图表的配置项和数据
+  // 使用刚指定的配置项和数据显示图表。
+  myPieChart.setOption(optionPie.value, true);
+}
+
+//折线图配置部分
+const lineDom = ref() // 使用ref创建虚拟DOM引用，使用时用lineDom.value
+var myLineChart: any;// 基于准备好的dom，初始化echarts实例
+const optionLine = ref({
+  title: {
+    text: '季度不同支出'
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: ['住房支出', '饮食支出', '交通支出', '教育支出', '医疗支出', '娱乐支出', '其他支出']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['第一季度', '第二季度', '第三季度', '第四季度']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: seasonData.value
+});
+function initLine() {
+  // 指定图表的配置项和数据
+  myLineChart.setOption(optionLine.value, true);// 使用刚指定的配置项和数据显示图表。
+}
+onMounted(
+  () => {
+    myPieChart = echarts.init(pieDom.value);//注意声明周期钩子
+    myLineChart = echarts.init(lineDom.value);
+    initPie()
+    initLine()
+  }
+)
+</script>
+
+
+<style scoped>
+
+</style>
+
