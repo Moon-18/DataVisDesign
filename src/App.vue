@@ -13,7 +13,6 @@
 </template>
 
 <script lang="ts" setup>
-import lineChartVue from './components/lineChart.vue';
 import { ref, onMounted, watch } from "vue";
 import * as echarts from "echarts";//  按需引入 echarts
 const choose = ref(true)
@@ -29,16 +28,23 @@ function addData() {
 
   //TODO2:增加数据,数据的来源是上面这仨变量,需要添加到yearData,seasonData的对应项中
   //inputName在已有标签中,添加对应数据;否则添加到其他
-  //大概张下面两条的样子
+  //大概长下面两条的样子
   // yearData.value.push({ value: 50, name: 'rose 9' })
   // seasonData.value[0].data[0] += 50
   initPie()
   initLine()
   console.log(yearData.value);
   inputName.value = ""
-  inputSeason.value=0
+  inputSeason.value = 0
   inputValue.value = 0
 
+}
+const summaryStr = ref('')
+function createSummary() {
+  //TODO3 根据数据补充一下内容,大概就是遍历一下俩数组,分析点有用的特征,然后把下面的写写
+  summaryStr.value = "在您的全年支出中,最大的是:XX支出,花费XX元,占比总支出XX%\n"
+  summaryStr.value += "在您的季度支出中,XX支出,花费XX元,(写个大概的分析)\n"
+  summaryStr.value += "20XX年,全国的人均支出为XXX(可以写死),与您的总支出对比,谁较高,消费支出习惯合理/不合理,建议以后理财或控制某方面支出啥的\n"
 }
 //TODO1:合理数据,符合对应项 全年=季度之和,且符合正常的支出(自己搜搜或造一造)
 const yearData = ref([] as any)//饼图数据,数据含义是,这一项全年的支出
