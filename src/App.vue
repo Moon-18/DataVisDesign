@@ -1,36 +1,46 @@
 <template>
-  <h1>个人支出财务统计</h1>
-  <div style="width: 50vw;display:inline-block">
-    <div v-show="choose" ref="pieDom" style="width: 900px; height: 600px;display:inline-block"></div>
-    <div v-show="!choose" ref="lineDom" style="width: 900px; height: 600px;display:inline-block"></div>
+  <div></div>
+  <h2 align="center">用户个人支出财务统计及全国信息对比</h2>
+  <div style="width: 50vw;">
+    <el-input v-model="inputSeason" class="inputTxt" placeholder="输入季度名称" :suffix-icon="Calendar" />
+    <el-input v-model="inputName" class="inputTxt" placeholder="输入支出名称" :suffix-icon="Goods" />
+    <el-input v-model="inputValue" class="inputTxt" placeholder="输入支出数值" :suffix-icon="Search" />
+    <el-button type="primary" @click="addData()">增加数据</el-button>
+    <el-button type="success">生成报告</el-button>
   </div>
+  <el-carousel :interval="10000" type="card" height="600px">
+    <el-carousel-item>
+      <div ref="pieDom" style="width: 900px; height: 600px;background-color: white;"></div>
+    </el-carousel-item>
+    <el-carousel-item>
+      <div ref="lineDom" style="width: 900px; height: 600px;background-color: white;"></div>
+    </el-carousel-item>
+  </el-carousel>
 
   <div style="width: 50vw;display:inline-block">
-    <el-button type="primary" @click="addData()">增加数据</el-button>
-    <el-button type="primary" @click="change()">切换数据</el-button>
+
+    <!-- <div v-show="!choose" ref="lineDom" style="width: 900px; height: 600px;display:inline-block"></div> -->
   </div>
+
+
 
 </template>
 
 <script lang="ts" setup>
 import { ref, onMounted, watch } from "vue";
 import * as echarts from "echarts";//  按需引入 echarts
-const choose = ref(true)
-function change() {
-  choose.value = !choose.value
-  initPie()
-  initLine()
-}
+import { Calendar, Search, Goods } from '@element-plus/icons-vue'
+
 const inputName = ref('')
-const inputSeason = ref(0)
-const inputValue = ref(0)
+const inputSeason = ref()
+const inputValue = ref()
 function addData() {
 
   //TODO2:增加数据,数据的来源是上面这仨变量,需要添加到yearData,seasonData的对应项中
   //inputName在已有标签中,添加对应数据;否则添加到其他
   //大概长下面两条的样子
-  // yearData.value.push({ value: 50, name: 'rose 9' })
-  // seasonData.value[0].data[0] += 50
+  yearData.value.push({ value: 50, name: 'rose 9' })
+  seasonData.value[0].data[0] += 50
   initPie()
   initLine()
   console.log(yearData.value);
@@ -190,6 +200,14 @@ onMounted(
 
 
 <style scoped>
+.inputTxt {
+  width: 200px;
+  padding: 10px;
+}
 
+
+div {
+  margin: auto
+}
 </style>
 
