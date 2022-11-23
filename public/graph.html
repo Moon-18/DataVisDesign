@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="http://cdn.zaixianke.com/china.js"></script>
+</head>
+
+<body>
+    <div id="box" style="width: 1200px; height: 800px;background-color: white;margin:auto"></div>
+    <script>
+        // 初始化echarts实例
+        var myEcharts = echarts.init(document.getElementById("box"));
+        var data = [
+            { name: '北京', value: 43640, downtown: 46776, countryside: 23574 },
+            { name: '天津', value: 33188, downtown: 36067, countryside: 19285 },
+            { name: '上海', value: 48879, downtown: 51295, countryside: 27205 },
+            { name: '重庆', value: 24598, downtown: 29850, countryside: 16096 },
+            { name: '河北', value: 19954, downtown: 24192, countryside: 15391 },
+            { name: '河南', value: 20000, downtown: 5000, countryside: 3000 },
+            { name: '云南', value: 18851, downtown: 27441, countryside: 12386 },
+            { name: '辽宁', value: 23831, downtown: 28438, countryside: 14606 },
+            { name: '黑龙江', value: 20636, downtown: 24422, countryside: 15225 },
+            { name: '湖南', value: 22798, downtown: 28294, countryside: 16951 },
+            { name: '安徽', value: 21911, downtown: 26495, countryside: 17163 },
+            { name: '山东', value: 22821, downtown: 29314, countryside: 14299 },
+            { name: '新疆', value: 18961, downtown: 25724, countryside: 12821 },
+            { name: '江苏', value: 31451, downtown: 36558, countryside: 21130 },
+            { name: '浙江', value: 36668, downtown: 42193, countryside: 25415 },
+            { name: '江西', value: 20290, downtown: 24587, countryside: 15663 },
+            { name: '湖北', value: 23846, downtown: 28506, countryside: 17647 },
+            { name: '广西', value: 18088, downtown: 22555, countryside: 14165 },
+            { name: '甘肃', value: 17456, downtown: 25757, countryside: 11206 },
+            { name: '山西', value: 17191, downtown: 21965, countryside: 11410 },
+            { name: '内蒙古', value: 22658, downtown: 27194, countryside: 15691 },
+            { name: '陕西', value: 19347, downtown: 24784, countryside: 13158 },
+            { name: '吉林', value: 19605, downtown: 24421, countryside: 13411 },
+            { name: '福建', value: 28440, downtown: 33942, countryside: 19290 },
+            { name: '贵州', value: 17957, downtown: 25333, countryside: 12557 },
+            { name: '广东', value: 31589, downtown: 36621, countryside: 20012 },
+            { name: '青海', value: 19020, downtown: 24513, countryside: 13300 },
+            { name: '西藏', value: 15342, downtown: 28159, countryside: 10577 },
+            { name: '四川', value: 21518, downtown: 26971, countryside: 16444 },
+            { name: '宁夏', value: 20024, downtown: 25386, countryside: 13536 },
+            { name: '海南', value: 18391, downtown: 23178, countryside: 14073 },
+            { name: '台湾', value: 43544, downtown: 5000, countryside: 3000 },
+            { name: '香港', value: 43474, downtown: 5000, countryside: 3000 },
+            { name: '澳门', value: 34594, downtown: 5000, countryside: 3000 }
+        ]
+        data.sort(function (a, b) {
+            return a.value - b.value;
+        });
+        var mapOption = {
+            title: {  //标题样式
+                text: '2021年各省份人均支出',
+                x: "center",
+                y:20+"px",
+                textStyle: {
+                    fontSize: 18,
+                    color: "green"
+                },
+            },
+            tooltip: {  //这里设置提示框
+                trigger: 'item',  //数据项图形触发
+                backgroundColor: "lightblue",  //提示框浮层的背景颜色。
+                formatter: function (params) {
+                    //console.log(JSON.stringify(params.data.value[2]));
+                    return "地区:" + params.data.name + "<br/>2021人均支出:" + params.data.value + "元<br/>城镇人均支出:" + params.data.downtown + "元<br/>农村人均支出:" + params.data.countryside;
+                }
+            },
+            visualMap: {//视觉映射组件
+                top: '350px',
+                left: '850px',
+                min: 15342,
+                max: 48879,
+                text: ['High', 'Low'],
+                realtime: false,  //拖拽时，是否实时更新
+                calculable: true,  //是否显示拖拽用的手柄
+                inRange: {
+                    color: ['lightskyblue', 'yellow', 'orangered']
+                }
+            },
+            series: [
+                {
+                    name: '模拟数据',
+                    type: 'map',
+                    mapType: 'china',
+                    roam: false,//是否开启鼠标缩放和平移漫游
+                    itemStyle: {//地图区域的多边形 图形样式
+                        normal: {//是图形在默认状态下的样式
+                            label: {
+                                show: true,//是否显示标签
+                                textStyle: {
+                                    color: "black"
+                                }
+                            }
+                        },
+                        zoom: 1.5,  //地图缩放比例,默认为1
+                        emphasis: {//是图形在高亮状态下的样式,比如在鼠标悬浮或者图例联动高亮时
+                            label: { show: true }
+                        }
+                    },
+                    animationDurationUpdate: 1000,
+                    universalTransition: true,
+                    top: "3%",//组件距离容器的距离
+                    data: data
+                }
+            ]
+        };
+        const barOption = {
+            xAxis: {
+                type: 'value'
+            },
+            yAxis: {
+                type: 'category',
+                axisLine: { show: false },
+                // axisLabel: { show: false },
+                axisTick: { show: false },
+                // splitLine: { show: false },
+                axisLabel: {
+                    rotate: 30
+                },
+                data: data.map(function (item) {
+                    return item.name;
+                })
+            },
+            animationDurationUpdate: 1000,
+            series: {
+                type: 'bar',
+                id: 'outcome',
+                data: data.map(function (item) {
+                    return item.value;
+                }),
+
+                universalTransition: true,
+                itemStyle: {
+                    normal: {
+                        color: function (params) {
+                            //注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
+                            var colorList = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622',
+                                '#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622',
+                                '#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622',
+                                '#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622',
+                                '#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622',
+                                '#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622'];
+                            return colorList[params.dataIndex]
+                        }
+                    }
+                }
+            }
+        };
+        let currentOption = mapOption;
+        myEcharts.setOption(mapOption);
+        setInterval(function () {
+            currentOption = currentOption === mapOption ? barOption : mapOption;
+            myEcharts.setOption(currentOption, true);
+        }, 10000);
+    </script>
+</body>
+
+</html>

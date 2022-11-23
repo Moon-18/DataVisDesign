@@ -1,27 +1,27 @@
 <template>
   <div></div>
   <h2 align="center">用户个人支出财务统计及全国信息对比</h2>
-  <div style="width: 50vw;">
+  <div style="width: 60vw;">
     <el-input v-model="inputSeason" class="inputTxt" placeholder="输入季度名称" :suffix-icon="Calendar" />
-    <el-input v-model="inputName" class="inputTxt" placeholder="输入支出名称" :suffix-icon="Goods" />
+    <el-input v-model="inputName" class="inputTxt" placeholder="输入支出种类" :suffix-icon="Goods" />
     <el-input v-model="inputValue" class="inputTxt" placeholder="输入支出数值" :suffix-icon="Search" />
-    <el-button type="primary" @click="addData()">增加数据</el-button>
-    <el-button type="success">生成报告</el-button>
+    <el-button type="primary" @click="addData()">增加个人数据</el-button>
+    <el-button type="danger">清空个人数据</el-button>
+    <el-button type="success">生成个人报告</el-button>
   </div>
-  <el-carousel :interval="10000" type="card" height="600px">
+  <el-carousel :interval="0" arrow="always" height="800px">
     <el-carousel-item>
-      <div ref="pieDom" style="width: 900px; height: 600px;background-color: white;"></div>
+      <!-- <div ref="pieDom" style="width: 800px; height: 800px;background-color: white;"></div> -->
+      <div ref="pieDom" style="width: 800px; height: 800px;background-color: white;margin:auto"></div>
     </el-carousel-item>
     <el-carousel-item>
-      <div ref="lineDom" style="width: 900px; height: 600px;background-color: white;"></div>
+      <div ref="lineDom" style="width: 800px; height: 800px;background-color: white;"></div>
+    </el-carousel-item>
+    <el-carousel-item>
+      <iframe src="graph.html" frameborder="0" width="width: 1200px" scrolling="no" style="width: 100%; height: 100%;background-color: white;margin:auto" ></iframe>
+      <!-- <lineChartVue /> -->
     </el-carousel-item>
   </el-carousel>
-
-  <div style="width: 50vw;display:inline-block">
-
-    <!-- <div v-show="!choose" ref="lineDom" style="width: 900px; height: 600px;display:inline-block"></div> -->
-  </div>
-
 
 
 </template>
@@ -30,7 +30,7 @@
 import { ref, onMounted, watch } from "vue";
 import * as echarts from "echarts";//  按需引入 echarts
 import { Calendar, Search, Goods } from '@element-plus/icons-vue'
-
+import lineChartVue from "./components/lineChart.vue";
 const inputName = ref('')
 const inputSeason = ref()
 const inputValue = ref()
