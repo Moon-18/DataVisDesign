@@ -1,7 +1,7 @@
 <template>
   <div></div>
   <h2 align="center">用户个人支出财务统计及全国信息对比</h2>
-  <div style="width: 60vw;">
+  <div style="width: 70vw;">
     <el-input v-model="inputSeason" class="inputTxt" placeholder="输入季度名称" :suffix-icon="Calendar" />
     <el-input v-model="inputName" class="inputTxt" placeholder="输入支出种类" :suffix-icon="Goods" />
     <el-input v-model="inputValue" class="inputTxt" placeholder="输入支出数值" :suffix-icon="Search" />
@@ -18,8 +18,12 @@
       <div ref="lineDom" style="width: 800px; height: 800px;background-color: white;"></div>
     </el-carousel-item>
     <el-carousel-item>
-      <iframe src="graph.html" frameborder="0" width="width: 1200px" scrolling="no" style="width: 100%; height: 100%;background-color: white;margin:auto" ></iframe>
-      <!-- <lineChartVue /> -->
+      <iframe src="graph.html" frameborder="0" width="width: 1200px" scrolling="no"
+        style="width: 100%; height: 100%;background-color: white;margin:auto"></iframe>
+    </el-carousel-item>
+    <el-carousel-item>
+      <iframe src="pictorialBar-bar-transition.html" frameborder="0" width="width: 1200px" scrolling="no"
+        style="width: 100%; height: 100%;background-color: white;margin:auto"></iframe>
     </el-carousel-item>
   </el-carousel>
 

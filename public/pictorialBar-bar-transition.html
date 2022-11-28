@@ -1,0 +1,231 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=pictorialBar-bar-transition&code=MYewdgzgLgBADgQygCwMoE8C2AjEAbCGAXhgG8BYAKBhgDMQQATALgHIBLTBAcwFNmA9AMZIEzTj14C4YbgG5sCCLwBsAFgA07AGoAhAPIAlAO4AGANIBxbiACC92wDlUAVWQBRF9we7gD2wAaAMK2ALIOACIBAJxBqKj-AI4AYrqh2p4OQQCMUNja0bQBAMzuAB6hAIoA6snILtiWZRC0ABJlAgAqptH6AFYgKqGYAFLsCMVQAOyMeABa1QGMxYzZAK7YmGqo7sgjyYYuAS7ZzonnibsAkp0j6MCYIInm7ADWcOadAJoATI593DU-gieAArLwAqEAF6hMoQvBqHzGYCtXQqXhgPCFAI_YBgEZQ5BqXiWBCYOAgdChPpXCqddwQAAyQShZQAHG1aMVogI-moANQABUFULZAgATip-QA3Qb9TCgjYCwV9OY_Rj4-5gYDFRxQnm0H5s6WM9DSyX87TzALabKMALTXi4zVXdhXPpgcJrcz-EYBQyoTp4cICaVTWJlK7YWwCNTJVpgH62FzaapwbACKCmGwjVBQRiCxKGbCmRLRKC8CLc4qtbhXRymFQjaWvPDeewuKAjQzuZIuXjJUHaUyORjobhQ2yVXTaIK6OaVK4_fT6GYqbDSsuCxkCWigr7aL7ABCdfnGCIgBCtSp4MrmBBiwXRNQqb3oTpQQWmV6UiIjFQCIKPx4IkxgqOKlS8MgFTSn0iQOsgyTJOYlQBHgwDuOUbJQHgIBwLYKhBI4yRrC4rQjAI5h4u4iSIbYESVJU6DIMgphsngxTJCAATVGUIymOgYCMK05jkX0gq1u4hh4IeCC0MkvAiYytC7NE7CIRAVy2IynStKSASdJYujYIY7DZGy0SmFchhES4IF1oYcy6JuoQID8oTcNUCAuGAyDVHg-jcOYPw3lMcwqGU2CVMkUABBA2SYKYfSYHMoIqD8LiGJUtDZBEfxzFcoSWEEkGJOwjCOF8iQ_F8lRzF80TuJgeDGOwPx6aEuhslMcDSsYIDcGU0RwHgjLIFMIARG8VxgIk6ARGsrQCCokzILa_L8qEIA_HAaw_IkayOJg6CoH0bJgKgii2MgliMtos36K0xToGyyAqOgayJLe8QRKYxQ_P6xmghAKiJK0xhBKYcCggg26hK8qBzHMESdBJ1SOPoliI9e_J9Nk2ABLwULcFUZR9LwkrSqC-L6IK7jZMkpjVP9AguOKoLVFAPx9Ow0roOK-j8nMUJBPyXyoAI7gjBAUIBKg0qmCArSmP4tiuNoRjmKCQRfFcVxEKwGhUDQUDiggkAUuKUBIOw4BsBIfCCMIojiFwfDSLIChKKomg6AYJgWNYdgOM4bieO2ti-P4wRhJEMRxAk9i6Fc2RpBkLj-IYyS2OWmATVAnTJGycx1OE9gREIAjRLRah4NUoC0JXbISewlTsI4ryWP5oKMBAZLIH3PxrJUUDAFMJyOJ0FrSnqwCmAIqDZIYgrILR7BfJgjhrHAbLFDqjjoIK0pjqbbmhLbyBgAT-gtdEyC2NgahsQgXyhNkATauKhm6Iy3AII42BqjZAgKYYA-xkqMnTHgcUcBXhli-MUaSQQBhDB8AgfyjBIrcyCMYCAIwuBgCCOKYhBESjcB-IYbQWkk6MnYOYUwIx4bQGwKCEYrQ7JrDWOgKAag4CoFtBERgcBtAjFoHMNk6BtCJSyLQtQUBpTYCNI4ewQR9BrGGowbgcwQACDetERwo0VaGB-MgV4aF2BsjWFMLMwlOhTH5JmYkiZfi0H5A8UEfNjRPWiNKaos0Xi6HFMAKAhhtSYFtokSwcxjBb0XoKUEgo6FlCtIyKA3A4DRBGGUYwtARiXksHgKEEBRyiMIskDolgVCm2SCoeebJeCoB-IKCI-pMA4P0Owdgawx7mChMUEAoJM6IMDMGWwyRaDGC-HOMAgzKinncBEdAUVGC0HQLuYoUxgBsgOg4qE_I1nFH5FMHKVwvgqFQK8MAahEnSm3voKE7AsrmFoCoQUQtqjmEcPyRgvBEiCimFMcUS8VD1AQPeTArQIBTAlK8Fw0QpjcBUNoaUiU1CvAcMkbQrhDAzlaMgXgnRGCWFaNgcUyiIiR24K8FW-h0BBCCFMBAAQEDYGyLwdAjAoTSmSNKK4rRaaAuhS4AQ6BgIuHYGUQZoR-Q_GwCMbI55LDuGMMkacIiIiClsOPQwthuAuEZCMcUgo2mvDKLYflZZtCdBAAyNQXw1FQFCB8AIjJkhBAgHgVAgptBd3YKENkmBBQQDeGhBA-hEjYGSF8EYIxBQjGRLoEAoxEiGs6tkfQcBVyqOAIwUwCB-R4GwKgMU2TgCWCxn0V4wBxQKJUBI_khhXpQjAGBV6s0vjim0GUQw0RghgBcBEdw2BGSoHFGEdAwVaC-TwF4NK9Tk4CChMYMm2hXjaBcO4Z8UwIiMmiMYUUAhx76rNYG14-hgCGFBHMRgUBUDJA-kEXlrRQT6FsMYWwUBjKWAGFMGIjA-jThlsYBxARQTFESF28UrZOiMjZNUMdphpQQFCfm0EfRby8FoEIvANIugNGANUL4uhTrGL6MYdAhTpRzB5FCBAZQ1DsGSK8KYug9yJDHlMKkPwCoAqmNoFQVwBCVASlccwaw-guG_MUUw_IVp9AiGAWwkZ-S0HJGoaICURhBAENgUeqB9C0GAD8LMLhEgduiHMc9CptBqEqMUbA7BOjqn0OKEA5h9BqAgM9SwmBMDcFMIYAQyJrISp6uPbIIBKj-F0N2FwoJ3BQZGNwZLRADZG2oDACA-K8AVnFPbN2_AhAiGtq7SQHt5CKGUOoLQegjBmCsDYfwocPBeB8H4BwMcy70XjvEfwpg8Bp0yOXPAUx_g6sjq8BGLhLzuEFDiRRxntrsF4HgTAyBwCBksLYUWZQUT3PMIOTAUIvj5lQNEFQLgXAmhUVAEdgpdDl2qMYNyyQOlExUQWKEnRqEREsFc_QCA-jVCTK8FQR4vj0lchEK4KgTyMHqa8XzMgZJJ0wF8dwwA1gfbwF8VToJQiFiqZ0V4oJgBQkMKYRkPm4Bd1EdUaU3BihsjiioCAYARTgR1IyFQcAIBkulHAEWAQgmhFBK8II0QQBXG4LaT0iRTBeY_kSgmWwGfl1aFi2gtBTrYE6E6aoUI1ggEsJYtQ5hGSYFArYOY5hvC8H5O4WwwASSCitvoYw0p0gXtVHMPoEAkZ9DsQqRgERkIQGqPyfwVxhlBhDIKdYFcphbcre4UMKh2DBqhNUOYUxWjnRANkf89BpQCB0fTtnlgBAQEaAINIrRaChBVvYdwlRsW4vxX0YAKrsDFNsI7gIlRMCWFCOYUIKhaCMjKOwWw-p4kBBUDzbIPx2BzEcHAL4oIfiglMPIuAFFQRlDJljKE2BkC-MocgWg1QphXFBLQeJdLaDu_FEsnWARWiubH0EbgaxQRwCuKYAEGUKgMgOgNmHMB6lAvEE6owOYBBjLlcF5MUFcAgMYD8EFj8LoLdtoIwNNjcI4GyOKCMIFPoGyOwngPyAbtrnZtUMgERnrDUMkH0NgAVO4Cpp2GUIdGyIYNAItEPgBLQKZtEPyBELoLoFeOYFcIKFPM-I_O_hUAIGUHANCmoFUCoGAF8C4GoGAOgFCOgIMlcKYhMjPGyFCO4NwPNJUFMsRt0GoI4GhiHmUEEMzn7uYEdkocUNoIYO_rjgeLQBEMYJYNKNEOKKECmNai4AgFcCAB2iXBOLQLwKCIEfjPOG6uKNwEnlmA1MjO0NJvoJULMFAKCKJv9JgOoT8PotkLQJ0E7lNGiMUC4CoFMHgLQNAoKNwBEI6kEOgsUGBGeO-j4LFvFolsltwKlobMbDACAGsKPEmvwBwAVk7MVmIA7FIDIBVt7NVn7HVoHI1iHK4C1hHFHB1iEF1lELEL1knNUHoOkENvROwGgX0IyGAKYDBp2j3n0hEECq0FMMkHAHCoAjkLuFCGYQXnxmsNUP4IwGsAEL9ugHAPytzFCECBEGgKgASlzF8DzACKyIKDZGAJUBAMkJgMUHAD8LQLpj5GAGUNkFeLrrpj8CAAolAEhD8N5A0sAH0IwNKBDrwJBKiTVA8rAu4GsBAH0H0NEMUMjHAN8q8JggbueqCo4HMNwhZn0G5M1OYFMGAJuugNUH0PoMGnYtUHtK3MAISokPqQgFBnAngK8CKZ0NUaCCANoFCKgEEGTpsmsOmmAOwH0FAMUNUOgIxl8OgIHlCDpC4OgFMIyFcGsGoMgbFIKExNgPduKGAJ6FTDpOKI0exC4EEIyJycUAgNKMSpgmAOJtwH0OgBRu4BmdKC4HAAIMAFoUKK8FktgC0RKpgGNCihSpgK8O0NkMUAEKYKCOKKysUJXgrHgLGMUGoK0PyM6Q-JaeKF8GUJgBsK8NUIEiXOYOIX0FYgXojETAIEEGAK8EysAGaPoCyeJhJgIMUKCKJJjtoIkOdNkBeXqWGJ4ZUMSlylCO1O5LwO4FCIej5pUNwJigsKnvCrmLoAONKNkGoNodStTF8KYNgGUHgAEO4H0FMOoQXv8IiPRIkFAImC8V1GAf4IKDHqMqGPYgxZHoxBXLYCANEKjGoHFtkE9PvsgGnrOdKIcsGenqYLwCsK1M5H8I8okLQHCGnvyEyMOYpLygINoLQDyIwEENRqCKgGoH0qEKEL2NtD4CBXgC3l4WoGhNUJQtUAIK8NOEEO4D8A8j8BADKMkIyBEPoE1JUPyAfGyMYKEF8F8AgNCsYJkpqokAuZeabCoJ0JEhJrVJcuKFMENLuI-aCPyAEOwOgFEdoIKGyNgEEC6UgJ0KEkbp0BJuKGyF8o4BECFYYI4NKGUA7sYNgMqqWIfoyDAuOOKBDIyFMMqggO4K8OgC4PoNKCRfoJ0LoA8nMCUIwNShvMTIaYyL8P0KYHMK6tKMgJgHyrYJ6hEOYJ2XiBAEVO4LoNELoL6UEJYF8GyDvvMOsKENEHStwPoMUP0MsDKe-lINoNoKyrwIyNkFcHMGeNLhGXgKYLQHoUatgBxm-beqENUKgK0HutUJUlmN6ReMUGsKgF8OwK5nRvaQRq7t0UytgGsBpQIDiNwNkEEMcPyrCMUOYF8JYLJvYaYFMHzJMGgW5LYCNbwLVIGGfkynYhKGyLYHmhENUPoMkAIFUF8LmqBZ0IvPah6rmpYNoZ0NgKEMYNemtKgMpFVOuNkDJgJFACAJKpgXMHgCoHLKCAEQENKIsipLpVISRYYJQmANnmSsAAIKNFAI5iMGsHsPyIyLZpUMVZgObnAJ1CeF4JeQSJTsFd7QyENSmAEHMDBnAEEOgNznYbwI-nPA6LQEoJgKYdnHAFAAWnGUpuwJUi4HMJYHSjPOeD8CsMWOwhHJHEMQlu2aMeMeljQMALhCgLwBAPlpIEsS7KseVl7FVr7LVgHA1sHPYM1uHG1tHKcXHBcYnPYPgINhnEnElOPKNAxKYDeDyFfGil5fyKgBABZOegEMgH0LQOYIwHMGAmUM0c0ZVK0OgK0OmKCJVPWANKvhENoP6MkNULWPyGRMkMUHAhAIfJYFcLwFcOZXgCMNUIwIyB_J5vLa9l8LWCEBeIKE5cgHANwIwuXIYFA3iigM6UvJYKhIzC4D2ZJqEdoDLPoBUQNOcK7myM0MgMVZ2FAGzTMTZsxnAAQyAEEHAWPdwIwCoIYGTIyCYCvioO4CAMhowMALwtKOMIwHVHMI7vYOZDgCMLYJ0NkJvqwtEFLQ4GwgGLHjGCoxXMgOKJHoehtCAE-M-SoDehAAEDolyJYG6S0dRkPmfiSsAIKOJkEhuRoZXT4IyP1hZYYFZYmPHj8NuuEGUMkCMJ2EA8AA2o4K0FAMrMUBAK8EICEcIqYNkOgMkATnAO4NKCoMVGxY4IKPLezrBJYMUJ3vXg8ZULTMALwxAF3FrGsBENwETdnsYMUNkO_E1aEAENVMPGarLP0x-gEF8oKMSAXgMGs2UKbI4OwKYH8cOfftetoOKLoH0GUMgJU-4OYG87oMYIwFVD8NkIkKCIuBECoLoCObwNwIkC4KgF9JBcYDdYYFzB5t9tKL5PLIgrMIrFcGoNoI4GFYdU_Z4cADde8MgEEOwPhHGnwLDYwHNa0HmONXWI4IkLwAThAHOKCJYLwCgIoOUHlAeLcgGagJgIUNAKohABEP_X0CoK0D2gmGUGDjtBK-YCoF8rQJUFktkEDpYI4MAATWlLYBAOYMWngIUvXAIMmNKFaFCA7QjB9VPAGYTXjFMxxCMObuBnzGCpaXgJUMAFBfsBEJPMUmyPmWyFcEEHAH8RAIulMCMJ0FUO-NrQ5ngKHtFK8F8PjXMCNEyoYRqjWBEKCOwE2KmBABALYJ3KrO4HgMkMTqgMPG0kEKwFQAAL5yBUCgCQCwB4AsorbolQDB2yDEBkCTFZYgDGDMAwCmxrC8Aj3wB6PsDB12wwCsDijsDcDIBQATEZYgBa7KBQATsADa5tGgMApgAAurO_QGALeuwFCPwDANkCoC2225QLQGsNqIu2ADAFwK8LwBmp-wABRQDwkzuZZYC4B4AACUw7GW4o3Law6ZMHNAJsC7eA97FAGWyHk7vAFzE7rAQQyA7AYACAgAmASEBwAUwwDHhwALsIAwA4cUdCQLsIe8AAA6X7RHMAPwzT0QMAAAtFx6YP88u5MTQM27OzQGh3wEJBOxh1hzQMsYe6wNx_84bMuyp6YIbMpzx6wGe6JzAOJ_p1bfgMHXALJ_pybKu8lhTHh3Rhnlu_JzAHZxAIKCAER7luZ5h_J8BxR3h1lggIwGO02152J_p4Z159wKuywEh_Jx29bER4yD23gBO1OzOxZzAGh7QPu4J2FxJzAOgA3VPTF1h4pzAAe6wNMbMZgLwGp6wGPSABPRALV1litrlrV6fBbCAFbDbOALV_QEwMuxe-l0R9KBTMoCl-KNO3lzQM57QmAOh5lutuO3QAgAQLwAZ9N051PhAJ0OwMAK8LJ4t2OxO-XWtxt-l7N0l5545zQFwOkURxO9JptzQFeze3exO8hel-F458565-5zZ8V_J929gCttdzdzQKO8t6l898h3d4s2AI96YOl6FyFwZ7l_p2att2D1hxACNAu3Nwt5Dyd6t8oOd6j5dyD8l2QEd8t6d6T99_J857t_t4d0Tyt2dwz1h7N0R4T0t8Txz-j15-bBIJ-wtGbJ-42cVve9vqYHl8oKu5PYe-l3Jzd8R9V3hyp9kA5zd-VHh4oECtr45z5_e8bzD8D6Dxl0l32wO9wDD6gzgPgIYLwBR0gBN1N8j2Bw756re_e-V49QAKS1e1KB9Deo80D6_dEVg2Av6khmfLtPyB8w_vu8xjerdTzmzBqfvY83cYgspofRfQ8e8KcrYIDoAnfvvBK2xfsAflRlAntW3WxQeA_g9wdQAIfV-18wACCTsNerfQcABUD7pgw_L74PKP4PnP8npXB7RfzfN30oq307E7Pwag5tsvs_EP4H-AE79vEHMAAAPvv_AEgGgFvwQAAHSVegDVez-T-Ocq9j8wAL94BL8Pur_RAw849n879n8H9H-IAoAMAXvCAOf3q6Ndb-n_Ofo52f6v80oq_SAZvy94_8vef_Y_oALP4gCWuOWCmBANn4P8x-MA-9qszSgIDPeEHZAXv0P5oDT-wA8_h11x5ddrYn7XAWH2Q74DwehAidlMGyBTA2QpA3ftvzIH4BUBAAmgRBxAH9dGAt_D3np1R538oBMANXve207cdDe8nXXsu314_A1BWHY3ilxA4w99esfPDubUT4e9zeVPCwdbyI628PeAgvAE7xd7ZdC-rA-wagB95KcA-QfUwCHyT6-lRu4oPuHgHT6QAF2VfbPo51z6dleABfSbml1YHF9u2ZfOgBX0_YwAa-mCevr3yb7sCburfdvukM77d8G-ffGAIPzX6mBR-Y_Zth73kEKcXYZXPARvyf6L972_zbjh_2aH2CKBwgqgaIKAHiDL-Mxa_rwBYGP9ch0A1oR907p8Cuh3_IQXgBEEn8Bh-AEAWAPxQQAxhY_CYfJ04EwBN89jfgfMPsFLD0BtArAbli2Hg8dhWHPYfk3ShHCkBCw04WINWF0CzYnXbrswISFk9xhzQvYStHhSPDyBzwvocsIwHn9JBMAaQawNkGOd5BOwpQRrx04w8NBrAfXsUB0HIc9Bk7AwR7yMEIA4-rAUwViMk5XdLelPawbIDt5n9HBvAV3pOziE0ive7g97mV1YBeCT2rAYPrpz8Ep9AhafD4Zn3CEKCaAUQ_Pm73iGP8fkSQ8vh-yr6FDMhPfRvtBxuHId8hiHDIWUC77KjSh5Q4fpUJhET8Ye0_JoT8JoB3D7GoIToeaIWE9DFhYIs4YMKv5zErhN3NURaKmEPtO62QYEYIJOGOjXhF_dYZPTdH39_hXo7fKCFBB-iqeAY__uCPOHZZLhPwuoWwIjEv82hbIB4XMKeHxjqBKwi_vQMthMCq-YY-Th6JaGZiJ2tSNkJoFzEgj8x_QiEVCKNE3c4R8nGoV5w7GtsW27bcANACmI10q-hAEgDPwyw_s_2w48AAB1YA0dgkXXcYANmtKsBIOs7Scf-yr6zj9eq49cQgF_abiZxc4vblbVXardxC4oWrowHGCPAhIq4qgGexfYL9xQQ4z9jNB-TaiSAhoygHhDSEkBfxI4g9gBPADvicOj4qgHuxmi5Zn-AHN9vKPADpDVRkxYCWAFAmfj0hKEtCTAH5APtoO_vV8SOPP5odZAKAKocdAI7WkoA5_PdoeLAAAcUJEAICdONQlCQwJkHF9uJy44y92JQAA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.0/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.0/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    const pathSymbols = {
+  food:'image://data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAAAqFBMVEUAAAC1tbV9fX3ExMQWFhUbGxsfHx/T09Ojo6MmJia3t7dlZWXd3d1ubm4SEhJFRUXU1NSqqqqEhITJycmoqKikpKTY2Njg4ODl5eXMzMxeXl4AAABwcHB6enl9fX2cnJzh4eGampoyMjIxMTEsLCzx8fHf39/j4+PPz8/r6+vo6Ojm5ub4+PjZ2dnJycnc3Nz9/f28vLyvr6+VlZXV1dXt7e2cnJyIiIjnMAuKAAAAJXRSTlMA/v79CxIbA/4FHn2AUVWpb/t0goJStdPqRb0q9teD393HgIN06JvklgAAAUtJREFUeF5V0NdygzAQBVCBZQI2OO7d6bvq9PL/f5YVYcaT+wDoaHQlxKa8/P946uKyTtP0koyDJ6/P2lqw6rQehxMvjqXthFFKQXlcEEx8tlopA6CNFuUHJ/KcnEqhFADQQyhh08l3FoXWxJ0yndHKHJjPHgERlVYafFeHKLfEh9ihFsIALTHGaXTGBbRi1890IRCNUlqgIRZBvqMa2MgWaUnhWlOgK2Ql7Z6xbQFtXs1m0jmZ562URQf1D2NZIMGCQeqidNYq2YQZY9Emlwi2HGMB87pvwogx9plLh7oDikInqyDuH/63thV1++Mo2pu2quNmySj8nSbaAhGLVnqOH3y8h6yuqlxSSD032XRBb5s6qHwC0p5aPLMkSZZDTPHWNOGSZHQ+j1bXezgMQxjer6v5nJOPE1F0W32/Ur5Wt2jivyrO+ZzC+YS/EJszXSv0oH0AAAAASUVORK5CYII=',
+  transportation:'image://data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAABI1BMVEUAAAARFA9tm7otTF8ZFhMAAAD///9qh4lWcof///8PHiQiNkGWl5dsamhsa2uQtc7U1NTr6+vNzc0/S1RPhqhiYmNup83c3NyPvdytra2MiohnbXOlw9hAb408aYM1XncrTGBLgaNbW1s0cJFjmLpblrpkq9Y3RlCjo6MAAABaWldxb2jCwsJmanCrrrA6X3g2RVIAAABLiK0JMkstb5JHUluuyt4pSV1DdpVJfZ8yVm0AAACLi4tvb28NAACOu9pdgZo/h69NlL0AR2hkXli8u7t0dHT7+/t4en2Y2f+cm5vy8vH39vWnqKiBrctRncmioqGZwNuS1P5PiKxVlLtgp9JxwfJoaGlzsNdJf6CFx/G6trF60/8eS2PDz9mCwOiiuc7Kz3o5AAAAR3RSTlMAFfwYCBn5AQT+EDybQdfy/f37c8qu+/z+y/3+7f1IY6Skn4PivupOziRQKf6P+ZWKN+deqP77r1R6hUaKamHs7/rkU97g6Vvm04kAAAFVSURBVHheTdGHbrNADABgk0AOyCC7aXab1eydzvFvIHOP7r7/U/y2lUix5AM+2bJ1wDGEwFQBVJDPA7URAgULJrPmCkxAHOq9VToEs4YOutMpKXLFCslSPVGWiM8mPsikXlaOqbFYJJPJwcBomJqJrMB1OpO7COcd0a+lbS8/xwcGGSjkcrvb68y+R8hznw68hnqYrVxR9XCnUDEbLSrAMyK2fnhlUg568eBI/zwxjVkVUE947DL9wz8/7UULxAmPkOcR5ZdtSFyuCvIH5OAwAtBbGjo7X9djQBszw+/X53qVxrklTL8WrA0vsRna+5jlxefdpljI/TUbcWYBSjR2jwylzvZ9/zax4iFk7Bf5qc77yM2ZI777V6I/Q1mIKujU0k30+63jDnAxI+fmp491mJC/btcSOfc2t0UqYr9ZOcm5V4Q3biT2dOroKO4s3yGmmg0R/wcIRix7p7U1oQAAAABJRU5ErkJggg==',
+  shelter:'image://data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAAA0lBMVEUAAADl7NjRAABkkSUoaEPX2b22to2ielmhonSTGAC+xcHOzKF5mzYtdS96UUvLAACtLSPBAADWwa2FOiezAACdPzTIAADGn4OajW2Ak6YcYTEMaDI6aTd8ekmmpnlVAABmYEcuAACdlYfm5MPq6tTk5czR0LGmpGWJfWvg38Xs6snPz6rc3L6psrNvpzCXrcM5kC9oIgV1nMq0s3XndGbXm4vgAADHVSffSjbTe2WzuoG8u4KLmqwAZKgAe+EAceGPrtOwvMVcRjZZjsZZjT7m5dDFKsW+AAAAI3RSTlMA/P1uD/7GAjkE/v6isizWZ7H8no1J6fov/o/WvsnG/sbG/BMHfM0AAAEQSURBVHhejcwFbsNAEAXQmGMKM6fLxiAz9P5X6ji12iZNpY5250tvpJ/5xxjGSzbhvWRVhfW7I5fP5yCfOwrybCYXHroM6Cgu5pI0XxShy0gZslpblSSMpdKqVgVIWa3Iaw2/w2BtLVdUoITN8rJOgO8HUl+WzfSQ3WhYBIIQWFjbZIE+fUtxuN8RstuHmG6/fUq9+DBBaHKIPTr94b4XHxM/xp7/4MQ6nYU4nyzy5AIhkfwvN8zEgyDQYCBST04N5jdDxC8XjsKmzxp3VRXHYfYVfDwGv9rMUVToUaIoYrZFgzfe5wG1bBZFCrg7Gt0Y9ZDHx30OQdlt5IK32m6n29N1fTAcDiB63U67lflrPgDtMCaW3w6+wwAAAABJRU5ErkJggg==',
+  outcome:'image://data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAABWVBMVEUAAADiw2jLn0TLrVbsz3Dr1H7FpU9bWC1/fzzEo17VuWAAAAduXDGypHO2jz4ODhSSeTt2YjijgzxPRCnQsFm3p2fbtUnnx1aHbTbt2ovbtFF2aUeScjdvYTeQeDh2YzipkEusjj93ZDp+dkdxWzOchUaNZyt9Zja2mlK7nE9yWjOsiT7Wu2iQcTdqWjarkkqlkEuTfT5oVzSCcz7cu1Onijt3WyiFYyjTzLTUy7LIu43ItXPQybPBrnnMv5LTrU68lUCLcj3avGHdxnujgjyylEnnvUp/cU4+PkJxblfixmLhvmDAmkHx13X05rb13G/v0l/434H+5oa8qWrYxmubkWBrZFKBaju7o1SZez/CnkaXcyvOtFujjU/35KHcuVq8n1nkyWv73VQGHzvz2H2MeEz/7GmQgFVZWE/97JSBeFv144nk05nY0bxlXEj76no1Nj4AADqtn2n0B8y0AAAAP3RSTlMA/v7+/v7+AQQD/Ao9TP4U51H3J/5h/v6l/v3+yi6i0e3dwiBv2NiRqfxe/v6+sL13eHvI/Vf9/dCZ95S4z3MMEFo2AAABeElEQVR4XlWRVW/kQBCE2zi2s+vFLDOEmQ+Ny8wMYYa7/w9JPAq4Hkatr6TqGjUYQknr7x9/f/35+XiyaIVP8bCoVatTRnuoTjUr8N+NDYYRNvx+EwbEw0qxxLrpygrwCL7EwaEkyUOv4AAOTBziZX3dk0YmzgOsLY2Oj0ZLFvhmIHAlSDKblcnsMGEB9BniCGY80tlZ1uM9yCgO3Ojd3p+wAe/VVb1eL1IZ+wIgzLl0fzyrPbc77VqtSMWSH9wWG6t0u1Do3uSYiroaxkEcWPrCaaXbuf9/X2g1CXUHOMx3KYG+6N507vy3tw2a2AaEeYQSThvaXT7/r8A0aDWOF/MQYd0EzTS1YOsld0G4nTbMwZdhVSLfYq6b10+0ytox52BZl6XS5DwXvDyfE5SIP4AARRVnWZrNc/lLtiTJuhJ+L4QQbCmKLpMBaTUgkaJz0LMYRREs7EUVXZTLpCyL64NeCvc0Xtfasm8zFApt+lIuAxiG6UZGyCvNwD23dRbHUgAAAABJRU5ErkJggg==',
+  clothes:'image://data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAMAAADX9CSSAAAAolBMVEUAAAB0j7UlLDQ0Ql9/nb4kLD+Ss89OcXhjfKdZcJx7l7lNYHyHpb5NYINogZNDVXRFWHg+UHF3kqsyPGIeIlElJWdLXn4sOFFOYHgCADoPCEhpgJMAADRDVHhth5o1RGQXF0UmLU0rMVszO29ogqqPr8xshbCUttKYutV4k7pLXoCKqclgd6RxjLRwiZ6EosRdc4pviadQZZEAAA18mbJAT1525J98AAAAJHRSTlMA/gdD/hr+A/7++oP95K6dtsXo/f3GzSlfZ9mGhvHbcPujrcxmnYm8AAABL0lEQVR4Xn2P127DMAxFJUtyHc+RNHtH03sk//9rpV01yFMPpEv6GCAoNPOFnPvjG3jcHfiwQOPcVssGWK5uDgirWZw311XRNMXq2uQxAzXPOAtXN+P4eo1jo11xtrNi0Fp13fPZdVrBjxhNHEKhNBwdYq21q5QID6B3XegqUSqlQgwBnRt2O4TIvnhSv3Rdl0oI4VNa7Als83VcBnkphCipAPJgefzdBzHStyUgINqeMPsCB5GethbaExD2YVvut3Sm9fstCOsD7lNj6HR9Hnx6Y2psDK6N+fQJx1jWGNcSY56AsKS8llzWc/AUvVlz6XkSgOTrt3Yij1cVl3JKL3qvyaKqWlQcgFJFDNTsN8UC8ICpFps/z7JTMQyTG4bilDFQFkYuSZplaXIhDP3HD5i6JVWssAkGAAAAAElFTkSuQmCC'
+};
+const labelSetting = {
+  show: true,
+  position: 'right',
+  offset: [10, 0],
+  fontSize: 16
+};
+function makeOption(type, symbol) {
+  return {
+    title: {
+      text: 'China’s per capita expenditure\n in 2019 - 2021 '
+    },
+    legend: {
+      data: ['2021', '2020','2019']
+    },
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow'
+      }
+    },
+    grid: {
+      containLabel: true,
+      left: 20
+    },
+    yAxis: {
+      data: ['outcome', 'clothes', 'shelter', 'transportation', 'food '],
+      inverse: true,
+      axisLine: { show: false },
+      axisTick: { show: false },
+      axisLabel: {
+        margin: 30,
+        fontSize: 14
+      },
+      axisPointer: {
+        label: {
+          show: true,
+          margin: 30
+        }
+      }
+    },
+    xAxis: {
+      splitLine: { show: false },
+      axisLabel: { show: false },
+      axisTick: { show: false },
+      axisLine: { show: false }
+    },
+    animationDurationUpdate: 500,
+    series: [
+      {
+        name: '2021',
+        id: 'bar1',
+        type: type,
+        label: labelSetting,
+        symbolRepeat: true,
+        symbolSize: ['80%', '60%'],
+        barCategoryGap: '40%',
+        universalTransition: {
+          enabled: true,
+          delay: function (idx, total) {
+            return (idx / total) * 1000;
+          }
+        },
+        data: [
+          {
+            value: 24100,
+            symbol: symbol || pathSymbols.outcome
+          },
+          {
+            value: 1419,
+            symbol: symbol || pathSymbols.clothes
+          },
+          {
+            value: 5641,
+            symbol: symbol || pathSymbols.shelter
+          },
+          {
+            value: 3156,
+            symbol: symbol || pathSymbols.transportation
+          },
+          {
+            value: 7178,
+            symbol: symbol || pathSymbols.food
+          }
+        ]
+      },
+      {
+        name: '2020',
+        id: 'bar2',
+        type: type,
+        barGap: '10%',
+        label: labelSetting,
+        symbolRepeat: true,
+        symbolSize: ['80%', '60%'],
+        universalTransition: {
+          enabled: true,
+          delay: function (idx, total) {
+            return (idx / total) * 1000;
+          }
+        },
+        data: [
+          {
+            value: 21209,
+            symbol: symbol || pathSymbols.outcome
+          },
+          {
+            value: 1238,
+            symbol: symbol || pathSymbols.clothes
+          },
+          {
+            value: 5215,
+            symbol: symbol || pathSymbols.shelter
+          },
+          {
+            value: 2762,
+            symbol: symbol || pathSymbols.transportation
+          },
+          {
+            value: 6397,
+            symbol: symbol || pathSymbols.food 
+          }
+        ]
+      },
+      {
+        name: '2019',
+        id: 'bar3',
+        type: type,
+        barGap: '10%',
+        label: labelSetting,
+        symbolRepeat: true,
+        symbolSize: ['80%', '60%'],
+        universalTransition: {
+          enabled: true,
+          delay: function (idx, total) {
+            return (idx / total) * 1000;
+          }
+        },
+        data: [
+          {
+            value: 21559,
+            symbol: symbol || pathSymbols.outcome
+          },
+          {
+            value: 1231,
+            symbol: symbol || pathSymbols.clothes
+          },
+          {
+            value: 5055,
+            symbol: symbol || pathSymbols.shelter
+          },
+          {
+            value: 2862,
+            symbol: symbol || pathSymbols.transportation
+          },
+          {
+            value: 6084,
+            symbol: symbol || pathSymbols.food 
+          }
+        ]
+      }
+    ]
+  };
+}
+const options = [
+  makeOption('pictorialBar'),
+  makeOption('bar'),
+  makeOption('pictorialBar', 'diamond')
+];
+var optionIndex = 0;
+option = options[optionIndex];
+setInterval(function () {
+  optionIndex = (optionIndex + 1) % options.length;
+  myChart.setOption(options[optionIndex]);
+}, 2500);
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
