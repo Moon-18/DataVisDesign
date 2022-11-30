@@ -7,7 +7,7 @@
     <el-cascader v-model="inputName" :options="nameOption" placeholder="选择支出种类" />
     <el-input v-model="inputValue" class="inputTxt" placeholder="输入支出数值" :suffix-icon="Search" />
     <el-button type="primary" @click="addData()">增加个人数据</el-button>
-    <el-button type="danger"  @click="clearData()">清空个人数据</el-button>
+    <el-button type="danger" @click="clearData()">清空个人数据</el-button>
     <el-button type="success" @click="showSummary">生成个人报告</el-button>
     <el-button type="info">
       <a href="http://gdzd.stats.gov.cn/gzdcd/gz_tjsj/" target="_blank" style="text-decoration: none">数据来源</a>
@@ -44,8 +44,8 @@ const inputName = ref('')
 const inputSeason = ref()
 const inputValue = ref()
 const seasonOption = [{ value: "第一季度", label: "第一季度" }, { value: "第二季度", label: "第二季度" }, { value: "第三季度", label: "第三季度" }, { value: "第四季度", label: "第四季度" }]
-const nameOption = [{ value: "住房支出", label: "住房支出" }, { value: "饮食支出", label: "饮食支出" }, { value: "交通支出", label: "交通支出" }, 
-  { value: "教育支出", label: "教育支出" }, { value: "医疗支出", label: "医疗支出" }, { value: "娱乐支出", label: "娱乐支出" }, { value: "其他支出", label: "其他支出" }]
+const nameOption = [{ value: "住房支出", label: "住房支出" }, { value: "饮食支出", label: "饮食支出" }, { value: "交通支出", label: "交通支出" },
+{ value: "教育支出", label: "教育支出" }, { value: "医疗支出", label: "医疗支出" }, { value: "娱乐支出", label: "娱乐支出" }, { value: "其他支出", label: "其他支出" }]
 
 function addData() {
   //TODO2:增加数据,数据的来源是上面这仨变量,需要添加到yearData, seasonData的对应项中
@@ -88,8 +88,12 @@ function addData() {
   inputValue.value = '';
 }
 function clearData() {  //TODO 清空数据按钮 清空不了
-  yearData.value = [];
-  seasonData.value = [];
+  yearData.value.forEach((item: any) => { item.value = 0 });
+  seasonData.value.forEach((item: any) => {
+    // item.data.forEach((it2: any) => { it2 = 0 }) 
+    // console.log(item.data)
+    item.data = [0, 0, 0, 0]
+  });
   initLine();
   initPie();
 }
@@ -108,7 +112,7 @@ function createSummary() {
   rate = 1.0 * maxYearExpense / sumExpense * 100.0;
   summaryStr.value = "在您的全年支出中, ";
   summaryStr.value += "最高支出项是" + yearData.value[maxYearExpensePos].name + ", ";
-  summaryStr.value += "共花费" + maxYearExpense.toString() + "元, 占比总支出" + rate.toString() + "%。\n";
+  summaryStr.value += "共花费" + maxYearExpense.toString() + "元, 占比总支出" + rate.toFixed(2) + "%。\n";
 
   let season = ['第一季度', '第二季度', '第三季度', '第四季度'];
   let maxSeasonExpense = -1, maxSeasonExpensePos = -1, minSeasonExpense = 1000000000, minSeasonExpensePos = -1;
@@ -135,8 +139,9 @@ function createSummary() {
   summaryStr.value += "2021年全国的人均支出为24100元, 您的总支出远远高于此数字。鉴于您所在地为广州, 生活成本普遍较高, 建议您合理消费, 注意理财。祝您生活如意, 步步高升。\n";
 
 }
-const showSummary=()=>{
+const showSummary = () => {
   createSummary()
+  console.log(summaryStr.value)
   ElMessageBox.alert(summaryStr.value, '个人报告', {
     // if you want to disable its autofocus
     // autofocus: false,

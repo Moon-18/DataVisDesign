@@ -11,6 +11,11 @@ npm run dev
 
 小组大作业,四人共同完成,共计四副图表
 
+前两幅支持动态修改;后两幅仅做参考与展示
+
+成员 gmy ljx st sly
+
+
 ## Vue 3 + TypeScript + Vite
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
