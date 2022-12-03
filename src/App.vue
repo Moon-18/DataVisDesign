@@ -1,11 +1,13 @@
 <template>
   <h2 align="center" class="title">用户个人支出财务统计及全国信息对比</h2>
   <div style="width:1200px;">
-    <!-- <el-input v-model="inputSeason" class="inputTxt" placeholder="输入季度名称" :suffix-icon="Calendar" /> -->
-    <el-cascader v-model="inputSeason" :options="seasonOption" placeholder="选择季度名称" />
-    <!-- <el-input v-model="inputName" class="inputTxt" placeholder="输入支出种类" :suffix-icon="Goods" /> -->
-    <el-cascader v-model="inputName" :options="nameOption" placeholder="选择支出种类" />
-    <el-input v-model="inputValue" class="inputTxt" placeholder="输入支出数值" :suffix-icon="Search" />
+    <span ref="inputBox">
+      <!-- <el-input v-model="inputSeason" class="inputTxt" placeholder="输入季度名称" :suffix-icon="Calendar" /> -->
+      <el-cascader v-model="inputSeason" :options="seasonOption" placeholder="选择季度名称" />
+      <!-- <el-input v-model="inputName" class="inputTxt" placeholder="输入支出种类" :suffix-icon="Goods" /> -->
+      <el-cascader v-model="inputName" :options="nameOption" placeholder="选择支出种类" />
+      <el-input v-model="inputValue" class="inputTxt" placeholder="输入支出数值" :suffix-icon="Search" />
+    </span>
     <el-button type="primary" @click="addData()">增加个人数据</el-button>
     <el-button type="danger" @click="clearData()">清空个人数据</el-button>
     <el-button type="success" @click="showSummary">生成个人报告</el-button>
@@ -13,7 +15,8 @@
       <a href="http://gdzd.stats.gov.cn/gzdcd/gz_tjsj/" target="_blank" style="text-decoration: none">数据来源</a>
     </el-button>
   </div>
-  <el-carousel autoplay=false :interval="50000" indicator-position="none" trigger="click" arrow="always" height="660px">
+  <el-carousel autoplay=false :interval="50000" indicator-position="none" trigger="click" arrow="always" height="660px"
+    @change="((pre: any, next: any) => { handleChange(pre, next) })">
     <el-carousel-item>
       <div ref="pieDom" class="chart"></div>
     </el-carousel-item>
@@ -40,6 +43,13 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 import type { Action } from 'element-plus'
 import { Calendar, Search, Goods } from '@element-plus/icons-vue'
 import lineChartVue from "./components/lineChart.vue";
+const inputBox = ref()
+function handleChange(index: any, index2: any) {//TODO 显示后两幅的时候禁止输入...不做了...
+  // window.alert(index)
+  // if (index == 2) {
+  //   inputBox.value.display
+  // }
+}
 const inputName = ref('')
 const inputSeason = ref()
 const inputValue = ref()
