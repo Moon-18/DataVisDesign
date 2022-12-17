@@ -9,9 +9,9 @@ npm install
 npm run dev
 ```
 
-在线浏览
+在线浏览,使用GitHub Pages托管静态页面
 
-http://02clannad.cf:9527/
+https://moon-18.github.io/
 
 ## 分工
 
